@@ -13,7 +13,7 @@
 ## Notes-zhTW: 一組可配置的按鈕，能自動從背包中尋找設定的物品供方便使用。
 ## UIType: 动作条
 ## UIType-zhTW: 動作條
-## Author: Toadkiller
+## Author: Toadkiller (Updated by AHHH_REPTAR)
 ## SavedVariables: AutoBar_Config
 ## X-Category: Interface Enhancements
 ## X-Website: http://www.curse-gaming.com/en/wow/addons-4430-1-autobar-toadkiller.html
