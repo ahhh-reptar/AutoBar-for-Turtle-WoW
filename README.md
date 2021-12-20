@@ -1,7 +1,7 @@
 # AutoBar for Turtle WoW
 AutoBar updated to work with Turtle WoW (specifically Goblins and High Elves), as well as new (currently probably incomplete) groups for items that start quests and items used during quests.
 
-Make sure you rename the base folder to just AutoBar, not AutoBar-For-Turtle-WoW or AUtoBar-For-Turtle-WoW-Master or anything else.
+Make sure you rename the base folder to just AutoBar, not AutoBar-For-Turtle-WoW or AutoBar-For-Turtle-WoW-Master or anything else.
 
 # Known Issues:
 - I almost certainly did not find all the quest items yet.
