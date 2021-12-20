@@ -12,7 +12,7 @@ Make sure you rename the base folder to just AutoBar, not AutoBar-For-Turtle-WoW
 
 ## Initial Upload: 
 - Goblins/High Elves no longer have an error shot at them and will be able to use autobar correctly. 
-- Added category QuestStartItems and populated with 211 items that start quests.  
+- Added category QuestStartItems and populated it with 211 items that start quests.  
 - Added category QuestUseItems and populated it with 92 items used during quests.  
 - Added Goblin and High Elf starting food and water to correct categories.  
 - Added Crystal-Infused Bandage to Bandages even though I'm not sure this isn't just a database error.
