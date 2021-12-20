@@ -6,7 +6,7 @@ Make sure you rename the base folder to just AutoBar, not AutoBar-For-Turtle-WoW
 # Known Issues:
 - I almost certainly did not find all the quest items yet.
 - Translation files were not updated.
-- All Turtle WoW specific mounts were not updated.  I'm not going to fix this as in less than a week we'll have the mount journal anyways.
+- All Turtle WoW specific mounts were not updated.  I'm not going to fix this as in about a week we'll have the mount journal anyways.
 
 # Changelog
 
