@@ -135,6 +135,22 @@ AutoBar_Category_Info = { -- global
 			13447,	-- Elixir of the Sages			18		60 18 spi
 		},
 	},
+	["POTION_SPELLPOWER"] = {
+		["texture"] = "INV_Potion_25",
+		["description"] = AUTOBAR_CLASS_SPELLPOWERPOTIONS,
+		["items"] = {
+			6373,	-- Elixir of Firepower			+10 fire spd
+			17708,	-- Elixir of Frost Power 		+15 frost spd
+			9155, 	-- Arcane Elixir				+20 spd
+			21546,	-- Elixir of Greater Firepower	+40 fire spd
+			9264,	-- Elixir of Shadow Power		+40 shadow spd
+			13454,	-- Greater Arcane Elixir		+35 spd
+			61423,	-- Dreamtonic					+35 spd - 20 min
+			61224,	-- Dreamshard Elixir			+15 spd +2 spellcrit
+	--		13512, 	-- Flask of Supreme Power		+150 spd
+		},
+	},
+
 	["POTION_WISDOM"] = {
 		["texture"] = "INV_Potion_06",
 		["description"] = AUTOBAR_CLASS_WISDOMPOTIONS,
@@ -390,6 +406,16 @@ AutoBar_Category_Info = { -- global
 			12662,	-- Demonic Rune
 		},
 	},
+	["TEAS"] = {
+		["description"] = AUTOBAR_CLASS_TEAS;
+		["texture"] = "INV_Drink_Milk_05";
+		["limit"] = { ["downhp"] = { 1050, 1050 }, ["downmana"] = { 1050, 1050 }, },
+		["items"] = {
+			15723,	-- Tea with Sugar
+			61675,	-- Nordanaar Herbal Tea
+		},
+	},
+
 	----------------
 	["PROTECTION_ARCANE"] = {
 		["description"] = AUTOBAR_CLASS_ARCANE_PROTECTION;
@@ -587,6 +613,11 @@ AutoBar_Category_Info = { -- global
 	["FOOD_INTELLIGENCE"] = {
 		["description"] = AUTOBAR_CLASS_FOOD_INTELLIGENCE;
 		["texture"] = "INV_Misc_Food_63";
+		["noncombat"] = true,
+	},
+	["FOOD_SPELLPOWER"] = {
+		["description"] = AUTOBAR_CLASS_FOOD_SPELLPOWER;
+		["texture"] = "INV_Drink_19";
 		["noncombat"] = true,
 	},
 	["FOOD_ARATHI"] = {
@@ -1469,6 +1500,7 @@ AutoBar_Category_Info["FOOD_STAMINA"].items = {
 		13934,	-- Mightfish Steak	-- Cooking - Level 45, heals 1933, stamina
 		11950,	-- Windblossom Berries	-- Felwood - Level 45, heals 1933, stamina/spirit
 		21023,	-- Dirge's Kickin' Chimaerok Chops	-- Cooking - Level 55, heals 2250, 25 stamina
+		51717,	-- Hardened Mushroom -- Survival - Level 55, heals 2250, 25 stamina
 };
 AutoBar_Category_Info["FOOD_AGILITY"].items = {
 		13928,	-- Grilled Squid	-- Cooking - Level 35, heals 874, agility
@@ -1488,6 +1520,11 @@ AutoBar_Category_Info["FOOD_STRENGTH"].items = {
 AutoBar_Category_Info["FOOD_INTELLIGENCE"].items = {
 		18254,	-- Runn Tum Tuber Surpris-- int bonus
 };
+AutoBar_Category_Info["FOOD_SPELLPOWER"].items = {
+		84041,	-- Gilneas Hot Stew +12spd
+		60977,  -- Danonzo's Tel'Abim Delight +22spd
+};
+
 AutoBar_Category_Info["SHARPENINGSTONES"].items = {
 		23122,	-- Consecrated Sharpening Stone
 		2862,	-- Rough Sharpening Stone

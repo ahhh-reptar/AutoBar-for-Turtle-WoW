@@ -21,7 +21,7 @@
 
 
 local setname, coremajor = "Food", "1"
-local vmajor, vminor = "Food 1", tonumber(string.sub("$Revision: 14324 $", 12, -3))
+local vmajor, vminor = "Food 1", tonumber(string.sub("$Revision: 15619 $", 12, -3))
 
 
 -- Check to see if an update is needed
@@ -37,8 +37,8 @@ local t = {
 	foodcombohealth = "2682:294 3448:294 13724:2148", -- Value == Total health recovered
 	foodcombomana   = "2682:294 3448:294 13724:4410", -- Value == Total mana recovered
 	foodcomboperc   = "21537:100 20388:75 20389:75 20390:75 21215:100", -- Value == Total percentage HP/MP recovered
-	foodperc        = "19696:50 19994:50 19995:50 19996:50", -- Value == Percentage HP recovered
-	foodpercbonus   = "20516:48 21235:50 21254:48", -- Value == Percentage HP recovered (with Well Fed buff)
+	foodperc        = "19696:50 19994:50 19995:50 21235:50 19996:50", -- Value == Percentage HP recovered
+	foodpercbonus   = "20516:48 21254:48", -- Value == Percentage HP recovered (with Well Fed buff)
 
 	--New fish in 1.9:
 	-- 21071 155hp 315mp Raw Sagefish
@@ -60,14 +60,14 @@ local t = {
 	food              = {"foodbread", "foodbreadconjured", "foodcheese", "foodfish", "foodfruit", "foodfungus", "foodmeat", "foodmisc", "foodarathi"},
 	foodbread         = "4540:61 4541:243 4542:552 4544:874 4601:1392 8950:2148 16169:874",
 	foodbreadconjured = "1113:243 1114:552 1487:874 5349:61 8075:1392 8076:2148 22895:3180",
-	foodcheese        = "414:243 422:552 1707:874 2070:61 3927:1392 8932:2148",
+	foodcheese        = "2070:61 414:243 422:552 1707:874 3927:1392 8932:2148",
 	foodfish          = "16766:1392 2682:294 4592:243 4593:552 4594:874 5095:243 6290:61 6887:1392 787:61 8364:874 8957:2148 13546:1392 13930:1392 13935:2148",
 	foodfruit         = "22324:2148 4536:61 4537:243 4538:552 4539:874 4602:1392 8953:2148 16168:1392 21033:2148 21031:2148 21030:1392",
 	foodfungus        = "3448:294 4604:61 4605:243 4606:552 4607:874 4608:1392 8948:2148",
 	foodmeat          = "19306:1392 19305:552 19224:874 19223:61 19304:243 117:61 2287:243 2681:61 2685:552 3770:552 3771:874 4599:1392 5478:552 6890:243 8952:2148 9681:1392 9681:61",
 	foodmisc          = "19225:2148 733:552 5473:294 5526:552 6316:243 13933:2148 16166:61 16167:243 16170:552 16171:2148 18255:1392",
 	foodarathi        = "20226:1074 20227:1608 20225:2148",
-	
+
 	-- Foods that give the Well Fed buff
 	foodbonus         = {"foodbreadbonus", "foodfishbonus", "foodmeatbonus", "foodmiscbonus", "foodcheesebonus", "foodpercbonus"},
 	foodbreadbonus    = "2683:243 3666:552 17197:61",
@@ -94,11 +94,13 @@ local t = {
 	foodclassmisc   = {"foodmisc", "foodmiscbonus", "foodmiscstats"},
 
 	-- Value == Mana recovered
-	waterall = {"water", "waterperc", "waterconjured", "foodcomboperc", "foodcombomana", "waterarathi"},
-	water         = "19229:835 19300:1992 159:151 1179:436 1205:835 1401:60 1645:1992 1708:1344 4791:1344 8766:2934 9451:835 10841:1344 17405:1344 19299:835 19318:4410",
+	waterall = {"water", "waterperc", "waterconjured", "foodcomboperc", "foodcombomana", "waterarathi", "waterspirit"},
+	water         = "1401:60 159:151 1179:436 1205:835 9451:835 19299:835 1708:1344 4791:1344 10841:1344 17405:1344 1645:1992 19300:1992 8766:2934 23161:2934",
 	waterperc     = "19997:60 21241:60",
-	waterconjured = "2136:835 2288:436 3772:1344 5350:151 8077:1992 8078:2934 8079:4200",
-	waterarathi   = "202226:2202 20227:3306 20225:4410",
+	waterconjured = "5350:151 2288:436 2136:835 3772:1344 8077:1992 8078:2934 8079:4200",
+	waterarathi   = "20226:2202 20227:3306 20225:4410",
+	-- Gives a spirit buff
+	waterspirit   = "13813:4410 19318:4410",
 }
 
 
