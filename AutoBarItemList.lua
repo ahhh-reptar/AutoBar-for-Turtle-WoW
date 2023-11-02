@@ -1162,6 +1162,7 @@ AutoBar_Category_Info["WATER_CONJURED"].items = {
 		8077,	-- Conjured Mineral Water
 		8078,	-- Conjured Sparkling Water
 		8079,	-- Conjured Crystal Water
+		83004,  -- Conjured Mana Orange
 };
 AutoBar_Category_Info["RAGEPOTIONS"].items = {
 		5631,	-- Rage Potion
