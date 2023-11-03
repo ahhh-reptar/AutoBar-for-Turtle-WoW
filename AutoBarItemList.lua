@@ -94,6 +94,7 @@ AutoBar_Category_Info = { -- global
 			6453,	-- Strong Anti-Venom		35
 			19440,	-- Powerful Anti-Venom		60
 			12586,	-- Immature Venom Sac
+			3386, 	-- elixir of poison resistance
 		},
 	},
 	----------------
@@ -125,6 +126,7 @@ AutoBar_Category_Info = { -- global
 		["items"] = {
 			2458,	-- Elixir of Minor Fortitude	27		60
 			3825,	-- Elixir of Fortitude			120		60
+			20079, 	-- Spirit of Zanza				50 sta 120
 		},
 	},
 	["POTION_INTELLECT"] = {
@@ -469,6 +471,14 @@ AutoBar_Category_Info = { -- global
 			5634,			-- Free Action Potion
 		},
 	},
+	["ZANZA"]	= {
+		["description"] = AUTOBAR_CLASS_ZANZA;
+		["texture"] = "INV_Potion_04";
+		["items"] = {
+			20081,		-- Swiftness of Zanza
+			20080,		-- Sheen of Zanza
+		},
+	},
 	----------------
 	["HEARTHSTONE"] = {
 		["description"] = AUTOBAR_CLASS_HEARTHSTONE;
@@ -584,6 +594,10 @@ AutoBar_Category_Info = { -- global
 		["description"] = AUTOBAR_CLASS_FOOD_CONJURED;
 		["texture"] = "INV_Misc_Food_73CinnamonRoll";
 		["noncombat"] = true,
+	},
+	["DRINK_STAMINA"] ={
+		["description"] = AUTOBAR_CLASS_DRINK_STAMINA;
+		["texture"] = "INV_Drink_04";
 	},
 	["FOOD_STAMINA"] = {
 		["description"] = AUTOBAR_CLASS_FOOD_STAMINA;
@@ -1452,6 +1466,12 @@ AutoBar_Category_Info["FOOD_PET_MEAT"].items = {
 		16171,	-- Shinsollo				-- Vendor  - Level 45, heals 2148
 		8952,	-- Roasted Quail 			-- Vendor  - Level 45, heals 2148
 };
+AutoBar_Category_Info["DRINK_STAMINA"].items = {
+		17048,	-- Rumsey Rum
+		20709,	-- Rumsey Rum Light	
+		21114,	-- Rumsey Rum Dark
+		21151, 	-- rumsey rum black label
+};
 AutoBar_Category_Info["FOOD_STAMINA"].items = {
 		6888,	-- Herb Baked Egg	-- Cooking - Level 1, heals 61, stamina/spirit
 		12224,	-- Crispy Bat Wing	-- Cooking - Level 1, heals 61, stamina/spirit
@@ -1505,6 +1525,9 @@ AutoBar_Category_Info["FOOD_STAMINA"].items = {
 };
 AutoBar_Category_Info["FOOD_AGILITY"].items = {
 		13928,	-- Grilled Squid	-- Cooking - Level 35, heals 874, agility
+		51711,	-- Sweet Mountain Berry			-- Survival - Level 35, heals 874, +10 agility
+		60976, 	-- Danonzo's Tel'Abim Surprise	-- Cooking - Level 55, heals 3186, +45 rAP
+		60978, 	-- Danonzo's Tel'Abim Medley	-- Cooking - Level 55, heals 3186, +2% haste
 };
 AutoBar_Category_Info["FOOD_MANAREGEN"].items = {
 		21072,	-- Smoked Sagefish	-- Cooking - Level 10, heals 378, mana 567, 3/5 mana regen
@@ -1516,10 +1539,12 @@ AutoBar_Category_Info["FOOD_HPREGEN"].items = {
 };
 AutoBar_Category_Info["FOOD_STRENGTH"].items = {
 		13810,	-- Blessed Sunfruit -- AD - Level 45, heals 1933, strength
-		20452,	-- Smoked Desert Dumpling-- Level 45, heals 2148, str bonus
+		20452,	-- Smoked Desert Dumpling	-- Level 45, heals 2148, str bonus
+		61720,	-- Power Mushroom			-- Survival -- Level 55, heals 2148, +20 str bonus
 };
 AutoBar_Category_Info["FOOD_INTELLIGENCE"].items = {
-		18254,	-- Runn Tum Tuber Surpris-- int bonus
+		18254,	-- Runn Tum Tuber Surpris	-- int bonus
+		51718,	-- Juicy Striped Melon		-- Survival - Level 45, heals 1933, stamina
 };
 AutoBar_Category_Info["FOOD_SPELLPOWER"].items = {
 		84041,	-- Gilneas Hot Stew +12spd

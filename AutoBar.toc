@@ -5,7 +5,7 @@
 ## Title-koKR: 오토바(AutoBar TWoW) |cff7fff7f -Ace2-|r
 ## Title-zhCN: 消耗品助手 TWoW|cff7fff7f -Ace2-|r
 ## Title-zhTW: 消耗品助手(AutoBar TWoW) |cff7fff7f -Ace2-|r
-## Version: 1.17.01.1 beta
+## Version: 1.17.01.2 beta
 ## DefaultState: enabled
 ## Notes: Configurable set of buttons that automatically displays configured items in your pack for use. Intended primarily for consumables. Does not use up any action slots so you can save those for spells and abilities.
 ## Notes-koKR: 가방안에 있는 소모성 아이템들을 조사하여 별도의 창에 표시합니다.
