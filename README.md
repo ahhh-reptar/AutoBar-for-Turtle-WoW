@@ -10,6 +10,13 @@ Make sure you rename the base folder to just AutoBar, not AutoBar-For-Turtle-WoW
 
 # Changelog
 
+## 1.17.01.2 beta (by LaYt)
+- Fixed errors w/ reset and swhitch profiles
+- Added Zanza
+- Added Rum
+- Added survival (gardening) food
+- Added Tel'Abim food
+
 ## 1.17.01.1 beta (by LaYt)
 - Clean up files
 - Update libs to last verions
