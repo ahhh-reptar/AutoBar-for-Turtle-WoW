@@ -1,6 +1,6 @@
 --[[
 Name: AceDebug-2.0
-Revision: $Rev: 14196 $
+Revision: $Rev: 17638 $
 Developed by: The Ace Development Team (http://www.wowace.com/index.php/The_Ace_Development_Team)
 Inspired By: Ace 1.x by Turan (turan@gryphon.com)
 Website: http://www.wowace.com/
@@ -11,21 +11,34 @@ Dependencies: AceLibrary, AceOO-2.0
 ]]
 
 local MAJOR_VERSION = "AceDebug-2.0"
-local MINOR_VERSION = "$Revision: 14196 $"
+local MINOR_VERSION = "$Revision: 17638 $"
 
 if not AceLibrary then error(MAJOR_VERSION .. " requires AceLibrary") end
 if not AceLibrary:IsNewVersion(MAJOR_VERSION, MINOR_VERSION) then return end
 
-if not AceLibrary:HasInstance("AceOO-2.0") then error(MAJOR_VERSION .. " requires AceOO-2.0") end 
+if loadstring("return function(...) return ... end") and AceLibrary:HasInstance(MAJOR_VERSION) then return end -- lua51 check
+if not AceLibrary:HasInstance("AceOO-2.0") then error(MAJOR_VERSION .. " requires AceOO-2.0") end
 
 local DEBUGGING, TOGGLE_DEBUGGING
 
 if GetLocale() == "frFR" then
 	DEBUGGING = "D\195\169boguage"
 	TOGGLE_DEBUGGING = "Activer/d\195\169sactiver le d\195\169boguage"
+elseif GetLocale() == "deDE" then
+	DEBUGGING = "Debuggen"
+	TOGGLE_DEBUGGING = "Aktiviert/Deaktiviert Debugging"
 elseif GetLocale() == "koKR" then
 	DEBUGGING = "디버깅"
 	TOGGLE_DEBUGGING = "디버깅 기능 사용함/사용안함"
+elseif GetLocale() == "zhTW" then
+	DEBUGGING = "除錯"
+	TOGGLE_DEBUGGING = "啟用/停用除錯功能"
+elseif GetLocale() == "zhCN" then
+	DEBUGGING = "\232\176\131\232\175\149"
+	TOGGLE_DEBUGGING = "\229\144\175\231\148\168/\231\166\129\231\148\168 \232\176\131\232\175\149"
+elseif GetLocale() == "ruRU" then
+	DEBUGGING = "Отладка"
+	TOGGLE_DEBUGGING = "Вкл/Выкл отладку для этого аддона."
 else -- enUS
 	DEBUGGING = "Debugging"
 	TOGGLE_DEBUGGING = "Enable/disable debugging"
@@ -57,17 +70,17 @@ function AceDebug:CustomDebug(r, g, b, frame, delay, a1, a2, a3, a4, a5, a6, a7,
 	if not self.debugging then return end
 
 	local output = string.format("|cff7fff7f(DEBUG) %s:[%s%3d]|r",  tostring(self), date("%H:%M:%S"), math_mod(GetTime(), 1) * 1000)
-	
+
 	if string.find(tostring(a1), "%%") then
 		output = output .. " " .. string.format(tostring(a1), tostring(a2), tostring(a3), tostring(a4), tostring(a5), tostring(a6), tostring(a7), tostring(a8), tostring(a9), tostring(a10), tostring(a11), tostring(a12), tostring(a13), tostring(a14), tostring(a15), tostring(a16), tostring(a17), tostring(a18), tostring(a19), tostring(a20))
 	else
 		if not tmp then
 			tmp = {}
 		end
-		
+
 		-- This block dynamically rebuilds the tmp array stopping on the first nil.
 		table.insert(tmp, output)
-		
+
 		table.insert(tmp, tostring(a1))
 		table.insert(tmp, a2)
 		table.insert(tmp, a3)
@@ -94,9 +107,9 @@ function AceDebug:CustomDebug(r, g, b, frame, delay, a1, a2, a3, a4, a5, a6, a7,
 		for k = 1, table.getn(tmp) do
 			tmp[k] = tostring(tmp[k])
 		end
-		
+
 		output = table.concat(tmp, " ")
-		
+
 		for k,v in pairs(tmp) do
 			tmp[k] = nil
 		end
@@ -110,7 +123,7 @@ function AceDebug:Debug(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, 
 	AceDebug.CustomDebug(self, nil, nil, nil, nil, nil, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20)
 end
 
-function AceDebug:IsDebugging() 
+function AceDebug:IsDebugging()
 	return self.debugging
 end
 
@@ -148,17 +161,17 @@ function AceDebug:CustomLevelDebug(level, r, g, b, frame, delay, a1, a2, a3, a4,
     if level > self.debuglevel then return end
 
 	local output = string.format("|cff7fff7f(DEBUG) %s:[%s.%3d]|r",  tostring(self), date("%H:%M:%S"), math_mod(GetTime(), 1) * 1000)
-    
+
 	if string.find(tostring(a1), "%%") then
 		output = output .. " " .. string.format(tostring(a1), tostring(a2), tostring(a3), tostring(a4), tostring(a5), tostring(a6), tostring(a7), tostring(a8), tostring(a9), tostring(a10), tostring(a11), tostring(a12), tostring(a13), tostring(a14), tostring(a15), tostring(a16), tostring(a17), tostring(a18), tostring(a19), tostring(a20))
 	else
 		if not tmp then
 			tmp = {}
 		end
-		
+
 		-- This block dynamically rebuilds the tmp array stopping on the first nil.
 		table.insert(tmp, output)
-		
+
 		table.insert(tmp, tostring(a1))
 		table.insert(tmp, a2)
 		table.insert(tmp, a3)
@@ -185,9 +198,9 @@ function AceDebug:CustomLevelDebug(level, r, g, b, frame, delay, a1, a2, a3, a4,
 		for k = 1, table.getn(tmp) do
 			tmp[k] = tostring(tmp[k])
 		end
-		
+
 		output = table.concat(tmp, " ")
-		
+
 		for k,v in pairs(tmp) do
 			tmp[k] = nil
 		end

@@ -44,6 +44,7 @@ local BUFFSLOT1 = 7;
 local BUFFSLOT2 = 8;
 local FOODSLOT = 9;
 local BUFFSLOT = 12;
+local WEAPONBUFFSLOT = 13;
 local PETFOOD = 24;
 
 local Compost = AceLibrary("Compost-2.0");
@@ -116,19 +117,22 @@ function AutoBarProfile.InitializeClass()
 	AutoBarProfile.ROGUE[22] = { "POISON-CRIPPLING" };
 	AutoBarProfile.ROGUE[23] = { "POISON-DEADLY" };
 	AutoBarProfile.ROGUE[24] = { "POISON-INSTANT" };
-	AutoBarProfile.ROGUE[BUFFSLOT] = { "SCROLL_AGILITY", "SCROLL_PROTECTION", "SCROLL_SPIRIT", "SCROLL_STAMINA", "SCROLL_STRENGTH", "BUFF_ATTACKPOWER", "BUFF_ATTACKSPEED", "BUFF_DODGE", "BUFF_FROST", "BUFF_FIRE", "SCROLL_INTELLECT" };
+	AutoBarProfile.ROGUE[BUFFSLOT] = { "POTION_FORTITUDE","POTION_AGILITY","POTION_STRENGTH","SCROLL_AGILITY", "SCROLL_PROTECTION", "SCROLL_SPIRIT", "SCROLL_STAMINA", "SCROLL_STRENGTH", "BUFF_ATTACKPOWER", "BUFF_ATTACKSPEED", "BUFF_DODGE", "BUFF_FROST", "BUFF_FIRE", "SCROLL_INTELLECT", "POTION_SPELLPOWER" };
+	AutoBarProfile.ROGUE[WEAPONBUFFSLOT] = {"SHARPENINGSTONES","WEIGHTSTONE"};
 
 	AutoBarProfile.WARRIOR = Compost:GetTable();
 	AutoBarProfile.WARRIOR[POTIONSLOT] = { "RAGEPOTIONS" };
 	AutoBarProfile.WARRIOR[FOODSLOT] = AutoBarProfile.ROGUE[FOODSLOT];
 	AutoBarProfile.WARRIOR[BUFFSLOT] = AutoBarProfile.ROGUE[BUFFSLOT];
+	AutoBarProfile.WARRIOR[WEAPONBUFFSLOT] = AutoBarProfile.ROGUE[WEAPONBUFFSLOT];
 
 	AutoBarProfile.DRUID = Compost:GetTable();
-	AutoBarProfile.DRUID[POTIONSLOT] = { "RUNES", "MANAPOTIONS", "REJUVENATION_POTIONS", "NIGHT_DRAGONS_BREATH", "PVP_MANAPOTIONS", "ALTERAC_MANA" };
+	AutoBarProfile.DRUID[POTIONSLOT] = { "RUNES", "MANAPOTIONS", "REJUVENATION_POTIONS", "NIGHT_DRAGONS_BREATH", "PVP_MANAPOTIONS", "ALTERAC_MANA", "TEAS" };
 	AutoBarProfile.DRUID[BUFFSLOT1] = { "WATER", "WATER_CONJURED" };
 	AutoBarProfile.DRUID[BUFFSLOT2] = { "WATER_SPIRIT" };
-	AutoBarProfile.DRUID[FOODSLOT] = { "FOOD_STRENGTH", "FOOD_AGILITY", "FOOD_STAMINA", "FOOD_INTELLIGENCE", "FOOD_HPREGEN", "FOOD_MANAREGEN" };
+	AutoBarProfile.DRUID[FOODSLOT] = { "FOOD_STRENGTH", "FOOD_AGILITY", "FOOD_STAMINA", "DRINK_STAMINA", "FOOD_INTELLIGENCE", "FOOD_HPREGEN", "FOOD_MANAREGEN", "FOOD_SPELLPOWER" };
 	AutoBarProfile.DRUID[BUFFSLOT] = AutoBarProfile.ROGUE[BUFFSLOT];
+	AutoBarProfile.DRUID[WEAPONBUFFSLOT] = {"SHARPENINGSTONES","WEIGHTSTONE","MANA_OIL","WIZARD_OIL"};
 
 	AutoBarProfile.HUNTER = Compost:GetTable();
 	AutoBarProfile.HUNTER[POTIONSLOT] = AutoBarProfile.DRUID[POTIONSLOT];
@@ -139,13 +143,15 @@ function AutoBarProfile.InitializeClass()
 	AutoBarProfile.HUNTER[PETFOOD].arrangeOnUse = true;
 	AutoBarProfile.HUNTER[PETFOOD].rightClickTargetsPet = true;
 	AutoBarProfile.HUNTER[BUFFSLOT] = AutoBarProfile.ROGUE[BUFFSLOT];
+	AutoBarProfile.HUNTER[WEAPONBUFFSLOT] = AutoBarProfile.DRUID[WEAPONBUFFSLOT];
 
 	AutoBarProfile.MAGE = Compost:GetTable();
-	AutoBarProfile.MAGE[POTIONSLOT] = { "RUNES", "MANAPOTIONS", "REJUVENATION_POTIONS", "NIGHT_DRAGONS_BREATH", "PVP_MANAPOTIONS", "ALTERAC_MANA", "MANASTONE" };
+	AutoBarProfile.MAGE[POTIONSLOT] = { "RUNES", "MANAPOTIONS", "REJUVENATION_POTIONS", "NIGHT_DRAGONS_BREATH", "PVP_MANAPOTIONS", "ALTERAC_MANA", "MANASTONE", "TEAS" };
 	AutoBarProfile.MAGE[BUFFSLOT1] = AutoBarProfile.DRUID[BUFFSLOT1];
 	AutoBarProfile.MAGE[BUFFSLOT2] = AutoBarProfile.DRUID[BUFFSLOT2];
-	AutoBarProfile.MAGE[FOODSLOT] = { "FOOD_STAMINA", "FOOD_INTELLIGENCE", "FOOD_HPREGEN", "FOOD_MANAREGEN" };
-	AutoBarProfile.MAGE[BUFFSLOT] = { "SCROLL_AGILITY", "SCROLL_PROTECTION", "SCROLL_SPIRIT", "SCROLL_STAMINA", "SCROLL_STRENGTH", "BUFF_ATTACKPOWER", "BUFF_ATTACKSPEED", "SCROLL_INTELLECT" };
+	AutoBarProfile.MAGE[FOODSLOT] = { "FOOD_STAMINA", "DRINK_STAMINA", "FOOD_INTELLIGENCE", "FOOD_HPREGEN", "FOOD_MANAREGEN", "FOOD_SPELLPOWER", "FOOD_AGILITY" };
+	AutoBarProfile.MAGE[BUFFSLOT] = { "POTION_FORTITUDE","SCROLL_AGILITY", "SCROLL_PROTECTION", "SCROLL_SPIRIT", "SCROLL_STAMINA", "SCROLL_STRENGTH", "BUFF_ATTACKPOWER", "BUFF_ATTACKSPEED", "SCROLL_INTELLECT", "POTION_SPELLPOWER" };
+	AutoBarProfile.MAGE[WEAPONBUFFSLOT] = {"MANA_OIL","WIZARD_OIL"};
 
 	AutoBarProfile.PALADIN = Compost:GetTable();
 	AutoBarProfile.PALADIN[POTIONSLOT] = AutoBarProfile.DRUID[POTIONSLOT];
@@ -153,6 +159,7 @@ function AutoBarProfile.InitializeClass()
 	AutoBarProfile.PALADIN[BUFFSLOT2] = AutoBarProfile.DRUID[BUFFSLOT2];
 	AutoBarProfile.PALADIN[FOODSLOT] = AutoBarProfile.DRUID[FOODSLOT];
 	AutoBarProfile.PALADIN[BUFFSLOT] = AutoBarProfile.DRUID[BUFFSLOT];
+	AutoBarProfile.PALADIN[WEAPONBUFFSLOT] = {"SHARPENINGSTONES","WEIGHTSTONE","MANA_OIL","WIZARD_OIL"};
 
 	AutoBarProfile.PRIEST = Compost:GetTable();
 	AutoBarProfile.PRIEST[POTIONSLOT] = AutoBarProfile.DRUID[POTIONSLOT];
@@ -160,6 +167,7 @@ function AutoBarProfile.InitializeClass()
 	AutoBarProfile.PRIEST[BUFFSLOT2] = AutoBarProfile.DRUID[BUFFSLOT2];
 	AutoBarProfile.PRIEST[FOODSLOT] = AutoBarProfile.MAGE[FOODSLOT];
 	AutoBarProfile.PRIEST[BUFFSLOT] = AutoBarProfile.MAGE[BUFFSLOT];
+	AutoBarProfile.PRIEST[WEAPONBUFFSLOT] = AutoBarProfile.MAGE[WEAPONBUFFSLOT];
 
 	AutoBarProfile.SHAMAN = Compost:GetTable();
 	AutoBarProfile.SHAMAN[POTIONSLOT] = AutoBarProfile.DRUID[POTIONSLOT];
@@ -167,6 +175,7 @@ function AutoBarProfile.InitializeClass()
 	AutoBarProfile.SHAMAN[BUFFSLOT2] = AutoBarProfile.DRUID[BUFFSLOT2];
 	AutoBarProfile.SHAMAN[FOODSLOT] = AutoBarProfile.DRUID[FOODSLOT];
 	AutoBarProfile.SHAMAN[BUFFSLOT] = AutoBarProfile.DRUID[BUFFSLOT];
+	AutoBarProfile.SHAMAN[WEAPONBUFFSLOT] = AutoBarProfile.PALADIN[WEAPONBUFFSLOT];
 
 	AutoBarProfile.WARLOCK = Compost:GetTable();
 	AutoBarProfile.WARLOCK[POTIONSLOT] = AutoBarProfile.DRUID[POTIONSLOT];
@@ -174,6 +183,7 @@ function AutoBarProfile.InitializeClass()
 	AutoBarProfile.WARLOCK[BUFFSLOT2] = AutoBarProfile.DRUID[BUFFSLOT2];
 	AutoBarProfile.WARLOCK[FOODSLOT] = AutoBarProfile.MAGE[FOODSLOT];
 	AutoBarProfile.WARLOCK[BUFFSLOT] = AutoBarProfile.MAGE[BUFFSLOT];
+	AutoBarProfile.WARLOCK[WEAPONBUFFSLOT] = AutoBarProfile.MAGE[WEAPONBUFFSLOT];
 
 	for buttonIndex = 1, AUTOBAR_MAXBUTTONS, 1 do
 		if (not AutoBarProfile[AutoBarProfile.CLASS][buttonIndex]) then
@@ -358,7 +368,8 @@ function AutoBarProfile.Initialize()
 	-- TODO add versioning & deal with this after Ace2
 	if (AutoBar_Config[AutoBar.currentPlayer].scaling) then
 		-- Config is from pre re-write. Not upgrading.
- 		Compost:Erase(AutoBar_Config[AutoBar.currentPlayer]);
+		Compost:Reclaim(AutoBar_Config[AutoBar.currentPlayer]);
+		AutoBar_Config[AutoBar.currentPlayer] = Compost:GetTable();
 		AutoBar_Msg(AUTOBAR_CHAT_MESSAGE1);
 	end
 
@@ -564,7 +575,8 @@ function AutoBarProfile:ButtonsCopy()
 	-- Copy the SmartCast info.
 	-- This is imperfect as an absense in a table can not overide a presence.
 	-- TODO: dump single item slots & fold smartSelfcast into buttons.
-	Compost:Erase(AutoBar.smartSelfcast);
+	Compost:Reclaim(AutoBar.smartSelfcast);
+	AutoBar.smartSelfcast = Compost:GetTable();
 	-- Basic and <CLASS> are already combined
 	if ((profile.useBasic or profile.useClass) and AutoBarProfile.smartSelfcast) then
 		for category in pairs(AutoBarProfile.smartSelfcast) do
@@ -616,7 +628,8 @@ function AutoBarProfile:ButtonsCopySingle()
 	end
 
 	-- Copy the SmartCast info.
-	Compost:Erase(AutoBar_Config[AutoBar.currentPlayer].smartSelfcast);
+	Compost:Reclaim(AutoBar_Config[AutoBar.currentPlayer].smartSelfcast);
+	AutoBar_Config[AutoBar.currentPlayer].smartSelfcast = Compost:GetTable();
 	-- Basic and <CLASS> are already combined
 	if (AutoBarProfile.smartSelfcast) then
 		for category in pairs(AutoBarProfile.smartSelfcast) do
@@ -659,7 +672,8 @@ function AutoBarProfile:ButtonsCopyShared()
 	end
 
 	-- Copy the SmartCast info.
-	Compost:Erase(AutoBar_Config[profile.shared].smartSelfcast);
+	Compost:Reclaim(AutoBar_Config[profile.shared].smartSelfcast);
+	AutoBar_Config[profile.shared].smartSelfcast = Compost:GetTable()
 	-- Basic and <CLASS> are already combined
 	if (AutoBarProfile.smartSelfcast) then
 		for category in pairs(AutoBarProfile.smartSelfcast) do
@@ -686,8 +700,10 @@ function AutoBarProfile:ButtonsCopyStandard()
 
 	-- Copy the buttons
 	for buttonIndex = 1, AUTOBAR_MAXBUTTONS, 1 do
-		Compost:Erase(characterButtons[buttonIndex]);
-		Compost:Erase(sharedButtons[buttonIndex]);
+		Compost:Reclaim(characterButtons[buttonIndex]);
+		Compost:Reclaim(sharedButtons[buttonIndex]);
+		characterButtons[buttonIndex] = Compost:GetTable();
+		sharedButtons[buttonIndex] = Compost:GetTable();
 		if (classLayerButtons[buttonIndex]) then
 			Compost:Reclaim(classLayerButtons[buttonIndex]); -- depth 1 so we reclaim the autocast table as well.
 		end
@@ -707,7 +723,8 @@ function AutoBarProfile:ButtonsCopyStandard()
 	end
 
 	-- Copy the SmartCast info.
-	Compost:Erase(AutoBar_Config[profile.shared].smartSelfcast);
+	Compost:Reclaim(AutoBar_Config[profile.shared].smartSelfcast);
+	AutoBar_Config[profile.shared].smartSelfcast = Compost:GetTable()
 	-- Basic and <CLASS> are already combined
 	if (AutoBarProfile.smartSelfcast) then
 		for category in pairs(AutoBarProfile.smartSelfcast) do

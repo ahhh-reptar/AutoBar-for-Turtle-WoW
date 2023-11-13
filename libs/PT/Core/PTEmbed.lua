@@ -1,5 +1,10 @@
 
-local vmajor, vminor = "1", tonumber(string.sub("$Revision: 12749 $", 12, -3))
+local vmajor, vminor = "1", tonumber(string.sub("$Revision: 15062 $", 12, -3))
+
+-- lua 5.1 check
+if(not loadstring("return function(...) return ... end")  and true or false) then
+	string.gmatch = string.gfind;
+end
 
 
 -- Check to see if an update is needed
@@ -133,7 +138,7 @@ function lib:CacheSet(set)
 	if not self.vars.cache then self.vars.cache = {} end
 	if not self.vars.cache[set] then
 		self.vars.cache[set] = {}
-		for word in string.gfind(rset, "%S+") do
+		for word in string.gmatch(rset, "%S+") do
 			local _, _, id, val = string.find(word, "(%d+):(%d+)")
 			id, val = tonumber(id) or tonumber(word), tonumber(val) or 0
 			self.vars.cache[set][id] = val
@@ -246,6 +251,7 @@ function lib:AddModule(name, table, memory)
 	if self.k[name] and self.compost then self.compost:Reclaim(self.k[name]) end
 	self.k[name] = table
 	self.loadstats[name] = self.loadstats[name] or 0 + memory
+	self.vars.cache = {}
 end
 
 

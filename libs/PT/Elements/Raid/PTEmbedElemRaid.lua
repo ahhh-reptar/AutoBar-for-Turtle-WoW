@@ -1,6 +1,6 @@
 
 local setname, coremajor = "Raid Loot", "1"
-local vmajor, vminor = "Raid Loot 1", tonumber(string.sub("$Revision: 13370 $", 12, -3))
+local vmajor, vminor = "Raid Loot 1", tonumber(string.sub("$Revision: 14518 $", 12, -3))
 
 
 -- Check to see if an update is needed
@@ -160,3 +160,4 @@ lib.memuse = gcinfo() - mem
 --      Load this bitch!      --
 --------------------------------
 PeriodicTableEmbed:Register(lib)
+
