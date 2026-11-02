@@ -8,6 +8,7 @@
 ## Version: 1.17.01.2 beta
 ## DefaultState: enabled
 ## Notes: Configurable set of buttons that automatically displays configured items in your pack for use. Intended primarily for consumables. Does not use up any action slots so you can save those for spells and abilities.
+## Notes-ruRU: Настраиваемый набор кнопок, который автоматически показывает настроенные предметы из вашей сумки для использования. Предназначен в первую очередь для расходуемых предметов. Не занимает ячейки действий, оставляя их для заклинаний и способностей.
 ## Notes-koKR: 가방안에 있는 소모성 아이템들을 조사하여 별도의 창에 표시합니다.
 ## Notes-zhCN: 一组可配置的按钮，能自动从背包中寻找设定的物品供方便使用。
 ## Notes-zhTW: 一組可配置的按鈕，能自動從背包中尋找設定的物品供方便使用。
@@ -45,6 +46,7 @@ Locale-zhCN.lua
 Locale-zhTW.lua
 Locale-deDE.lua
 Locale-frFR.lua
+Locale-ruRU.lua
 AutoBarItemList.lua
 Core.lua
 AutoBar.xml
